@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row">
+      <div class="col s12 m7"><span class="flow-text">Products({{total_items}})</span>
+        {% for item in cart %}
+        <div class="card card-cart horizontal hoverable">
+      <div class="card-image">
+        <img src="{{ item.product.product_image.url }}">
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+          <p>{{ item.product.product_title }}.</p>
+          <p>Cantidad:{{ item.quantity }}</p>
+          <p>Precio:${{ item.total_price }}</p>
+          <div class="card-action">
+                <form action="{% url 'shop:remove_from_cart' product_id=item.product.id%}" method="POST" style="display: inline;">
+                             {% csrf_token %}
+                             <button  onclick="M.toast({html: 'Product deleted'})" type="submit" class="waves-effect waves-light btn-large red"><i class="material-icons right">backspace</i>Eliminar</button>
+                </form>     
+        </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+    </div>
+      <div class="col s5"><span class="flow-text">Total</span>
+        <table class="responsive-table">
+             <tr>
+                 <th>Product</th>
+                 <th>Quantity</th>
+                 <th>Total Price</th>
+             </tr>
+             {% for item in cart %}
+             <tr>
+                 <td>{{ item.product.product_title }}</td>
+                 <td>{{ item.quantity }}</td>
+                 <td>{{ item.total_price }}</td>
+             </tr>
+             {% endfor %}
+         </table>
+      <h5 class="right-align">Total:${{subtotal}}</h5>
+      <button onclick="M.toast({html: 'Purchase completed'})" class="waves-effect waves-light btn-large"><i class="material-icons right">attach_money</i>Comprar</button>
+      </div>
+    </div>
+
+   
+{% endblock content %}

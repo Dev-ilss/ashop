@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+<!-- {% load crispy_forms_tags %} -->
+{% block content %}
+      <div class="col s12 m8 offset-m2 l6 offset-l3">
+        <div class="card-panel grey lighten-5 z-depth-1">
+          <div class="row valign-wrapper">
+            <div class="col s2">
+              <img class="circle responsive-img" src="{{ user.profile.image.url }}">
+            </div>
+            <div class="col s10">
+              <span class="black-text">
+                    <h2 class="account-heading">{{ user.username }}</h2>
+                    <p class="text-secondary">{{ user.email }}</p>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="input-field">
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+                {{ u_form.as_p }}
+                {{ p_form.as_p }}
+                </div>
+               <button class="btn waves-effect waves-light" type="submit" name="action">Update
+                    <i class="material-icons right">send</i>
+                </button>
+        </form>
+
+      </div>
+{% endblock content %}

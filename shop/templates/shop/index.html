@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block content %}
+<br>
+{% if product_list %}
+ <div class="row">
+        {% for product in product_list %}
+            <div class="col s4 m6 l4">
+                <div class="card hoverable ">
+                    <div class="card-image">
+                        <img class="responsive-img activator" src="{{ product.product_image.url }}">
+                    </div>
+                    <div class="card-content">
+                        <span class="activator">{{ product.product_title }}</span>
+                        <p class="grey-text">Precio ${{ product.product_price }}</p>
+                        <form action="{% url 'shop:add_to_cart' product_id=product.id quantity=1%}" method="post" style="display: inline;">
+                             {% csrf_token %}
+                          <button type="submit" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></button>
+                        </form>                   
+                    </div>
+                    <div class="card-reveal">
+                          <span class="card-title grey-text text-darken-4">{{ product.product_title }}<i class="material-icons right">close</i></span>
+                          <p>{{ product.product_desc }}</p>
+                        </div>
+                    <div class="card-action">
+                                {% if user.is_superuser %}
+                                    <form action="{% url 'shop:product-delete' product.id %}" method="POST" style="display: inline;">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn btn-default btn-sm">Delete</button>
+                                </form>
+                                <form action="{% url 'shop:product-update' product.id  %}" method="post" style="display: inline;">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn btn-default btn-sm">Update</button>
+                                </form>
+                                {% else %}
+                                    <button type="submit" class="btn btn-default btn-sm activator ">Ver producto</button>
+                                {% endif %}
+
+                    </div>     
+                </div>
+
+            </div>
+
+{% endfor %}
+    </div>
+ 
+    {% else %}
+    <h1>No product entries found on the database.</h1>
+ 
+ 
+{% endif %}
+     {% if user.is_superuser %}
+     <form action="{% url 'shop:product-entry'  %}" method="post" style="display: inline;">
+            {% csrf_token %}
+            <button style="position: fixed;bottom: 20;right: 20;"type="submit" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></button>
+        </form>
+     {% endif %}
+{% endblock content %}
