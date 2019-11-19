@@ -1,0 +1,73 @@
+#Conversor de divisas de pesos mexicanos a dolares, dolar canadiense, euro y
+#libra esterlina 
+
+def menu ():
+	print("1. Dolar")
+	print("2. Dolar canadiense")
+	print("3. Euro")
+	print("4. Libra esterlina")
+	print("Cuanto tienes en pesos mexicanos?")
+	global pesos
+	pesos = input()
+	pesos = float(pesos)
+	print("Que tipo de cambio deseas realizar?")
+	global cambio
+	cambio = input()
+	cambio = int(cambio)
+	#Validando menu
+	if (cambio==1):
+		Dolares()
+	elif (cambio==2):
+		DolarC()
+	elif (cambio==3):
+		Euros()
+	elif (cambio==4):
+		Libra_Esterlina()
+	else:
+		print("El tipo de cambio que seleccionaste no existe")
+	print ("Deseas hacer otra conversión (si/no)?")
+	global resp 
+	resp= input()
+	resp= resp.lower()
+	Otravez()
+def Dolares ():
+	global precio
+	precio = 0.052
+	precio = float(precio)
+	global dinero
+	dinero = pesos/precio
+	print("Tienes",dinero,"Dolares")
+		
+def DolarC ():
+  global precioc
+  precioc = 0.069
+  precioc = float(precioc)
+  global dinero
+  dinero = pesos/precioc
+  print("Tienes",dinero,"Dolares canadienses")
+  
+def Euros ():
+	global precioe
+	precioe = 0.047
+	precioe = float(precioe)
+	global dinero
+	dinero = pesos/precioe
+	print("Tienes",dinero,"Euros")
+
+def Libra_Esterlina ():
+	global preciol
+	preciol = 0.040
+	preciol = float(preciol)
+	global dinero
+	dinero = pesos/preciol
+	print("Tienes",dinero,"Libras Esterlinas")
+
+
+def Otravez():
+	while resp!= ("no"):
+		menu()
+#Llamando a la funcion de nuevo
+menu()
+
+
+
