@@ -38,4 +38,27 @@
             <i class="material-icons right">send</i>
         </button>
     </form>
+
+    <div class="container">
+        <div class="row">
+            {% for cate in final_postings %}
+                {% for post in cate.cat %}
+                    <div class="col s4">
+                        <div class="card">
+                            <div class="card-image">
+                                <a href="{{ post.url }}"><img src="{{ post.imgurl }}" alt=""></a>
+                            </div>
+                            <div class="card-content">
+                                <p>{{ post.titulo }}</p>
+                            </div>
+                            <div class="card-action">
+                                <a href="{{ post.url }}">Ver producto: Precio {{ post.precio }}</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% endfor %}
+        </div>
+    </div>
+
 {% endblock content %}
