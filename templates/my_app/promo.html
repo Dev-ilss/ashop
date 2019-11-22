@@ -3,8 +3,8 @@
         
 
     <div class="hero__section">
-        <div class="container">
-            <h1 style="text-align: center">¿Que quieres buscar?</h1>
+        <div class="container hero__section__container">
+            <h1 class="hero__title" style="text-align: center">¿Que quieres buscar?</h1>
             <form action="{% url 'new_search'%}" method="post">
                 {% csrf_token %} 
                 <div class="input-field valign-wrapper">
@@ -18,7 +18,7 @@
     </div>
 
     <!-- Garantizado (por asael :v) -->
-    <div class="container">
+    <div class="container container__garantiza">
         <div class="row">
             <div class="col s4">
                 
