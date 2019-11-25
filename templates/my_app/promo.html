@@ -8,8 +8,8 @@
             <form action="{% url 'new_search'%}" method="post">
                 {% csrf_token %} 
                 <div class="input-field valign-wrapper">
-                    <input class="col s9" type="text" name="search" placeholder="Buscar">
-                     <button class="btn waves-effect waves-light col s3" type="submit" name="action">Submit
+                    <input type="text" name="search" placeholder="Buscar">
+                    <button class="btn waves-effect waves-light col s3" type="submit" name="action">Submit
                         <i class="material-icons right">send</i>
                     </button>
                 </div>
