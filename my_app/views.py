@@ -5,6 +5,7 @@ from django.utils.translation import get_language, get_language_from_request
 from django.http import JsonResponse, HttpResponse
 from bs4 import BeautifulSoup
 from . import models
+import json
 
 
 
@@ -142,13 +143,6 @@ def get_products(request):
 			final_postings.append({"titulo":post_titles,"url": post_url,"precio": post_price,"imgurl": post_image_url})
 		j+=1
 	print(final_postings)
-	
-
-	stuff_for_frontend = {
-		'search': search,
-		'final_postings': final_postings,
-	}
-	data = []
-	for postings in final_postings:
-		data.append({"titulo":postings.titulo,"url": postings.url,"precio": postings.precio,"imgurl": postings.imgurl})
-	return JsonResponse(data)
+	data = {}
+	data['productos'] = final_postings
+	return HttpResponse(json.dumps(data), content_type="application/json")
