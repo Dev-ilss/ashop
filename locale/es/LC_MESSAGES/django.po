@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-24 07:02+0000\n"
+"POT-Creation-Date: 2019-11-25 17:41+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,6 +18,39 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+#: django-cart/cart/models.py:7
+msgid "creation date"
+msgstr ""
+
+#: django-cart/cart/models.py:8
+msgid "checked out"
+msgstr ""
+
+#: django-cart/cart/models.py:11 django-cart/cart/models.py:27
+msgid "cart"
+msgstr ""
+
+#: django-cart/cart/models.py:12
+msgid "carts"
+msgstr ""
+
+#: django-cart/cart/models.py:28
+#, fuzzy
+#| msgid "Quantity"
+msgid "quantity"
+msgstr "Cantidad"
+
+#: django-cart/cart/models.py:29
+msgid "unit price"
+msgstr ""
+
+#: django-cart/cart/models.py:37
+msgid "item"
+msgstr ""
+
+#: django-cart/cart/models.py:38
+msgid "items"
+msgstr ""
 
 # 			TRADUCIR DESDE AQUI
 # 	↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
@@ -85,7 +118,7 @@ msgstr "Añadir Nuevo Producto"
 msgid "Change"
 msgstr "Cambiar"
 
-#: templates/base.html:26
+#: templates/base.html:29
 msgid "Search for something..."
 msgstr "Busca algo..."
 
@@ -93,9 +126,13 @@ msgstr "Busca algo..."
 msgid "View product: Price"
 msgstr "Ver producto: Precio "
 
-#: templates/my_app/promo.html:21
+#: templates/my_app/promo.html:8
 msgid "What do you want to search?"
 msgstr "¿Que quieres buscar?"
+
+#: templates/my_app/promo.html:13
+msgid "Submit"
+msgstr "Buscar"
 
 #: templates/my_app/promo.html:28
 msgid "Search discounts"
@@ -121,9 +158,9 @@ msgstr "Seguridad de compras"
 msgid "Feel confident to buy with the best security."
 msgstr "Sientete seguro de comprar con la mejor seguridad."
 
-#: templates/my_app/promo.html:55
-msgid "Submit"
-msgstr "Buscar"
+#: templates/my_app/promo.html:64
+msgid "Most Searched products"
+msgstr "Productos mas buscados"
 
 #: users/templates/users/login.html:9
 msgid "Login"
@@ -143,7 +180,7 @@ msgstr "Te has desconectado"
 
 #: users/templates/users/logout.html:7 users/templates/users/register.html:16
 msgid "Already Have An Account?"
-msgstr "¿Ya tienes con una cuenta?"
+msgstr "¿Ya tienes una cuenta?"
 
 #: users/templates/users/logout.html:7
 msgid "Log In"

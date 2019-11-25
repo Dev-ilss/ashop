@@ -71,3 +71,11 @@
 .select-language {
 	display: flex;
 }
+
+.search-text{
+    color: #cccccc;
+}
+
+.search-text::focus{
+    color: #cccccc;
+}
