@@ -8,11 +8,14 @@
     <title>A-SHOP</title>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/slick.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/slick-theme.css' %}"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-   
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    
+
 </head>
 <body>
 <nav class="deep-orange darken-2">
@@ -37,26 +40,27 @@
               <li><a href="{% url 'profile' %}"><i class="large material-icons" style="color: black">account_circle</i></a></li>
               <li><a href="{% url 'logout' %}"><i class="large material-icons" style="color: black">directions_run</i></a></li>
             {% else %}
-              <li><a href="{% url 'login' %}"><i class="large material-icons" style="color: black">assignment_ind</i></a></li>
-              <li><a href="{% url 'register' %}"><i class="large material-icons" style="color: black">add_circle</i></a></li>
+              <li><a href="{% url 'login' %}"><i class="large material-icons left" style="color: black">assignment_ind</i>Login</a></li>
+              <li><a href="{% url 'register' %}"><i class="large material-icons left" style="color: black">add_circle</i>SignUp</a></li>
             {% endif %}
         </ul>
     </div>
 </nav>
 
-<div class="container">
- 
-{% if messages %}
-    {% for message in messages %}
-        <div class="card-panel green darken-1">
-            {{ message }}
-        </div>
-    {% endfor %}        
-{% endif %}
-{% block content %}
+    <!-- <div class="container"> -->
+        {% if messages %}
+            {% for message in messages %}
+                <div class="card-panel green darken-1">
+                    {{ message }}
+                </div>
+            {% endfor %}        
+        {% endif %}
+        {% block content %}
 
-{% endblock content %}
-    
-</div>
+        {% endblock content %}    
+    <!-- </div> -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="{% static 'js/slick.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
 </body>
 </html>

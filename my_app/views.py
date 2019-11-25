@@ -21,7 +21,7 @@ def promo(request):
 def topSearch(request):
 	final_postings = []
 	j=0
-	search = ['toyota', 'cars', 'comic']
+	search = ['toyota', 'guitar', 'comic']
 	for cat in search:
 		final_url = BASE_CRAIGSLIST_URL.format(quote_plus(cat))
 		response = requests.get(final_url)
@@ -29,11 +29,9 @@ def topSearch(request):
 		soup = BeautifulSoup(data, features='html.parser')
 
 		post_listings = soup.find_all('li', {'class': 'result-row'}, limit=2)
-		final_postings.append({str(cat): []})
-		# TODO:
-		# 	-Limite de solo dos elementos
-		# 	-Tener en cuenta de que no es una lista si no que es un objeto de tipo bs4 (algo asi), ay que convertir
-		# 	-¿Que es el request?
+		# final_postings.append({str(cat): []})
+
+		print(cat)
 		for	post in post_listings:
 			post_titles = post.find(class_='result-title').text
 			post_url = post.find('a').get('href')
@@ -49,9 +47,9 @@ def topSearch(request):
 			else:	
 				post_image_url = 'http://maestroselectronics.com/wp-content/uploads/2017/12/No_Image_Available.jpg'
 
-			final_postings[j][cat].append({"titulo":post_titles,"url": post_url,"precio": post_price,"imgurl": post_image_url})
+			final_postings.append({"titulo":post_titles,"url": post_url,"precio": post_price,"imgurl": post_image_url})
 		j+=1
-	print(type(post_listings))
+	print(final_postings)
 	
 
 	stuff_for_frontend = {
