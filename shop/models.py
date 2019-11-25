@@ -4,7 +4,7 @@ from django.urls import reverse
  
 class Product(models.Model):
     product_title = models.CharField(max_length=100)
-    product_price = models.CharField(max_length=5)
+    product_price = models.CharField(max_length=100)
     product_desc = models.CharField(max_length=100)
     product_image = models.ImageField(default='default.png', upload_to='product_files')
     def __str__(self):

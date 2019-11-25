@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% block content %}
 <div class="row">
-      <div class="col s12 m7"><span class="flow-text">Products({{total_items}})</span>
+      <div class="col s12 m7"><span class="flow-text">{% trans "Products"%}({{total_items}})</span>
         {% for item in cart %}
         <div class="card card-cart horizontal hoverable">
       <div class="card-image">
@@ -10,12 +11,12 @@
       <div class="card-stacked">
         <div class="card-content">
           <p>{{ item.product.product_title }}.</p>
-          <p>Cantidad:{{ item.quantity }}</p>
-          <p>Precio:${{ item.total_price }}</p>
+          <p>{% trans "Quantity:"%}{{ item.quantity }}</p>
+          <p>{% trans "Price:$"%}{{ item.total_price }}</p>
           <div class="card-action">
                 <form action="{% url 'shop:remove_from_cart' product_id=item.product.id%}" method="POST" style="display: inline;">
                              {% csrf_token %}
-                             <button  onclick="M.toast({html: 'Product deleted'})" type="submit" class="waves-effect waves-light btn-large red"><i class="material-icons right">backspace</i>Eliminar</button>
+                             <button  onclick="M.toast({html: {% trans 'Product deleted'%}})" type="submit" class="waves-effect waves-light btn-large red"><i class="material-icons right">backspace</i>{% trans "Delete" %}</button>
                 </form>     
         </div>
         </div>
@@ -26,9 +27,9 @@
       <div class="col s5"><span class="flow-text">Total</span>
         <table class="responsive-table">
              <tr>
-                 <th>Product</th>
-                 <th>Quantity</th>
-                 <th>Total Price</th>
+                 <th>{% trans "Product"%}</th>
+                 <th>{% trans "Quantity"%}</th>
+                 <th>{% trans "Total Price"%}</th>
              </tr>
              {% for item in cart %}
              <tr>
@@ -39,7 +40,7 @@
              {% endfor %}
          </table>
       <h5 class="right-align">Total:${{subtotal}}</h5>
-      <button onclick="M.toast({html: 'Purchase completed'})" class="waves-effect waves-light btn-large"><i class="material-icons right">attach_money</i>Comprar</button>
+      <button onclick="M.toast({html: {% trans 'Purchase completed'%}})" class="waves-effect waves-light btn-large"><i class="material-icons right">attach_money</i>{% trans "Buy"%}</button>
       </div>
     </div>
 

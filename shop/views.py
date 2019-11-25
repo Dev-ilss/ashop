@@ -7,14 +7,25 @@ from django.urls import reverse_lazy
 from django.core import serializers
 from cart.cart import Cart
 from django.http import JsonResponse, HttpResponse
+from django.utils.translation import get_language, get_language_from_request
 # Create your views here.
 from shop.models import Product
  
 # view for the index page
 class IndexView(generic.ListView):
     # name of the object to be used in the index.html
+
+    product_list = Product.objects.all()
     context_object_name = 'product_list'
     template_name = 'shop/index.html'
+    lang_code = get_language()
+    print(lang_code)
+    for products in product_list:
+        if lang_code=='es':
+            Price = products.product_price
+            Price = Price*19
+            print(Price)
+            pass
  
     def get_queryset(self):
         return Product.objects.all()

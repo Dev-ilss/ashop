@@ -1,0 +1,157 @@
+# Traducciones del ingles al lenguaje espanol.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR asaelcerros@gmail.com, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-11-24 07:02+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+
+# 			TRADUCIR DESDE AQUI
+# 	↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+#: shop/templates/shop/cart.html:5
+msgid "Products"
+msgstr "Productos"
+
+#: shop/templates/shop/cart.html:14
+msgid "Quantity:"
+msgstr "Cantidad"
+
+#: shop/templates/shop/cart.html:15
+msgid "Price:$"
+msgstr "Precio:$"
+
+#: shop/templates/shop/cart.html:19
+msgid "Product deleted"
+msgstr "Producto eliminado"
+
+#: shop/templates/shop/cart.html:19 shop/templates/shop/index.html:29
+msgid "Delete"
+msgstr "Eliminar"
+
+#: shop/templates/shop/cart.html:30
+msgid "Product"
+msgstr "Producto"
+
+#: shop/templates/shop/cart.html:31
+msgid "Quantity"
+msgstr "Cantidad"
+
+#: shop/templates/shop/cart.html:32
+msgid "Total Price"
+msgstr "Precio Total"
+
+#: shop/templates/shop/cart.html:43
+msgid "Purchase completed"
+msgstr "Compra completada"
+
+#: shop/templates/shop/cart.html:43
+msgid "Buy"
+msgstr "Comprar"
+
+#: shop/templates/shop/index.html:15
+msgid "Price:"
+msgstr "Precio"
+
+#: shop/templates/shop/index.html:33 users/templates/users/profile.html:25
+msgid "Update"
+msgstr "Actualizar"
+
+#: shop/templates/shop/index.html:36
+msgid "View Product"
+msgstr "Ver Producto"
+
+#: shop/templates/shop/index.html:48
+msgid "No product entries found on the database."
+msgstr "No se encontraron productos en la base de datos"
+
+#: shop/templates/shop/product_form.html:5
+msgid "Add a New Product"
+msgstr "Añadir Nuevo Producto"
+
+#: shop/templates/shop/product_form.html:15
+msgid "Change"
+msgstr "Cambiar"
+
+#: templates/base.html:26
+msgid "Search for something..."
+msgstr "Busca algo..."
+
+#: templates/my_app/new_search.html:17
+msgid "View product: Price"
+msgstr "Ver producto: Precio "
+
+#: templates/my_app/promo.html:21
+msgid "What do you want to search?"
+msgstr "¿Que quieres buscar?"
+
+#: templates/my_app/promo.html:28
+msgid "Search discounts"
+msgstr "Busqueda de ofertas"
+
+#: templates/my_app/promo.html:29
+msgid "Acquire the best offers from the best sites."
+msgstr "Busca las mejores ofertas de los mejores sitios."
+
+#: templates/my_app/promo.html:37
+msgid "Regional pricing"
+msgstr "Precios regionales"
+
+#: templates/my_app/promo.html:38
+msgid "Get your prices in your local currency."
+msgstr "Obten tus precios en tu moneda local."
+
+#: templates/my_app/promo.html:46
+msgid "Online security"
+msgstr "Seguridad de compras"
+
+#: templates/my_app/promo.html:47
+msgid "Feel confident to buy with the best security."
+msgstr "Sientete seguro de comprar con la mejor seguridad."
+
+#: templates/my_app/promo.html:55
+msgid "Submit"
+msgstr "Buscar"
+
+#: users/templates/users/login.html:9
+msgid "Login"
+msgstr "Login"
+
+#: users/templates/users/login.html:16
+msgid "Need An Account?"
+msgstr "Necesitas una cuenta?"
+
+#: users/templates/users/login.html:16 users/templates/users/register.html:16
+msgid "Sign In"
+msgstr "Registrarse"
+
+#: users/templates/users/logout.html:4
+msgid "You have been logged out."
+msgstr "Te has desconectado"
+
+#: users/templates/users/logout.html:7 users/templates/users/register.html:16
+msgid "Already Have An Account?"
+msgstr "¿Ya tienes con una cuenta?"
+
+#: users/templates/users/logout.html:7
+msgid "Log In"
+msgstr "Iniciar Sesion"
+
+#: users/templates/users/register.html:9
+msgid "Sign up"
+msgstr "Registrate"
+
+#~ msgid "Search"
+#~ msgstr "Buscar"

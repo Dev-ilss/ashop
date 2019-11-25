@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% block content%}
 	<h2 style="text-align: center">{{ search | title }}</h2>
 
@@ -13,7 +14,7 @@
                         <p>{{ post.titulo }}</p>
                     </div>
                     <div class="card-action">
-                        <a href="{{ post.url }}">Ver producto: Precio {{ post.precio }}</a>
+                        <a href="{{ post.url }}">{% trans "View product: Price"%}{{ post.precio }}</a>
                     </div>
                 </div>
             </div>

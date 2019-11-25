@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load i18n %}
 <!-- {% load crispy_forms_tags %} -->
 {% block content %}
       <div class="col s12 m8 offset-m2 l6 offset-l3">
@@ -21,7 +22,7 @@
                 {{ u_form.as_p }}
                 {{ p_form.as_p }}
                 </div>
-               <button class="btn waves-effect waves-light" type="submit" name="action">Update
+               <button class="btn waves-effect waves-light" type="submit" name="action">{% trans "Update" %}
                     <i class="material-icons right">send</i>
                 </button>
         </form>

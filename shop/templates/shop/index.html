@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load i18n%}
 {% block content %}
 <br>
 {% if product_list %}
@@ -11,7 +12,7 @@
                     </div>
                     <div class="card-content">
                         <span class="activator">{{ product.product_title }}</span>
-                        <p class="grey-text">Precio ${{ product.product_price }}</p>
+                        <p class="grey-text">{% trans "Price:"%} ${{ product.product_price }}</p>
                         <form action="{% url 'shop:add_to_cart' product_id=product.id quantity=1%}" method="post" style="display: inline;">
                              {% csrf_token %}
                           <button type="submit" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></button>
@@ -25,14 +26,14 @@
                                 {% if user.is_superuser %}
                                     <form action="{% url 'shop:product-delete' product.id %}" method="POST" style="display: inline;">
                                     {% csrf_token %}
-                                    <button type="submit" class="btn btn-default btn-sm">Delete</button>
+                                    <button type="submit" class="btn btn-default btn-sm">{% trans "Delete"%}</button>
                                 </form>
                                 <form action="{% url 'shop:product-update' product.id  %}" method="post" style="display: inline;">
                                     {% csrf_token %}
-                                    <button type="submit" class="btn btn-default btn-sm">Update</button>
+                                    <button type="submit" class="btn btn-default btn-sm">{% trans "Update"%}</button>
                                 </form>
                                 {% else %}
-                                    <button type="submit" class="btn btn-default btn-sm activator ">Ver producto</button>
+                                    <button type="submit" class="btn btn-default btn-sm activator ">{% trans "View Product"%}</button>
                                 {% endif %}
 
                     </div>     
@@ -44,7 +45,7 @@
     </div>
  
     {% else %}
-    <h1>No product entries found on the database.</h1>
+    <h1>{% trans "No product entries found on the database." %}</h1>
  
  
 {% endif %}
